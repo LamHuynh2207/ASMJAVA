@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.asmjava.Controller">
+   <children>
+      <TitledPane animated="false" layoutX="9.0" layoutY="9.0" prefHeight="320.0" prefWidth="783.0" text="Input employee information">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#refreshForm" prefHeight="294.0" prefWidth="781.0">
+               <children>
+                  <Button layoutX="650.0" layoutY="78.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="25.0" prefWidth="55.0" text="Save" />
+                  <Button layoutX="650.0" layoutY="135.0" mnemonicParsing="false" onAction="#updateEmployee" text="Update" />
+                  <Button layoutX="651.0" layoutY="190.0" mnemonicParsing="false" onAction="#deleteEmployee" prefHeight="25.0" prefWidth="56.0" text="Delete" />
+                  <Button layoutX="650.0" layoutY="21.0" mnemonicParsing="false" onAction="#searchText" prefHeight="25.0" prefWidth="55.0" text="Find" />
+                  <VBox layoutX="81.0" layoutY="69.0" prefHeight="181.0" prefWidth="100.0" spacing="17.0">
+                     <children>
+                        <Label prefHeight="23.0" prefWidth="122.0" text="ID:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="126.0" text="Full Name:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="27.0" prefHeight="23.0" prefWidth="100.0" text="Email:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="44.0" prefHeight="20.0" prefWidth="131.0" text="Age:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="61.0" prefHeight="25.0" prefWidth="100.0" text="Phone Number:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="189.0" layoutY="67.0" prefHeight="200.0" prefWidth="426.0" spacing="14.0">
+                     <children>
+                        <TextField fx:id="tfID" />
+                        <TextField fx:id="tfName" layoutX="10.0" layoutY="10.0" />
+                        <TextField fx:id="tfEmail" layoutX="10.0" layoutY="35.0" />
+                        <TextField fx:id="tfAge" layoutX="10.0" layoutY="60.0" />
+                        <TextField fx:id="tfPhone" layoutX="10.0" layoutY="85.0" />
+                     </children>
+                  </VBox>
+                  <TextField fx:id="tfSearch" layoutX="189.0" layoutY="21.0" prefHeight="25.0" prefWidth="425.0" />
+                  <Button layoutX="650.0" layoutY="243.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="25.0" prefWidth="57.0" text="Refresh" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TableView fx:id="table" layoutX="9.0" layoutY="338.0" onMouseClicked="#onTableSelectItem" prefHeight="255.0" prefWidth="783.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="226.33332061767578" text="Full Name" />
+            <TableColumn fx:id="emailColumn" prefWidth="179.66665649414062" text="Email" />
+            <TableColumn fx:id="ageColumn" prefWidth="121.66665649414062" text="Age" />
+            <TableColumn fx:id="phoneNumberColumn" prefWidth="179.66665649414062" text="Phone Number" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
